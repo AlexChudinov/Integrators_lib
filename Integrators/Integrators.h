@@ -144,28 +144,14 @@ namespace math
     {
         using state_type = vector_c<double, N>;
 
-        struct diff_fun_wrapper
-        {
-            const void* pObj_;
-            DFUN diff_fun_;
-
-            inline diff_fun_wrapper(const void* pObj, DFUN diff_fun)
-                : pObj_(pObj), diff_fun_(diff_fun)
-            {}
-
-            inline void operator ()
-            (
-                const state_type& state,
-                state_type& dxdt,
-                double time
-            ) const
-            {
-                (*diff_fun_)(pObj_, state.data(), dxdt.data(), &time);
-            }
-        };
+		auto diff_fun_wrapper = [pObj, diff_fun](const state_type& state, state_type& dxdt, double time)->void
+		{
+			(*diff_fun)(pObj, state.data(), dxdt.data(), &time);
+		};
 
         #define DEF_CASE(id, name)\
-        case id: return new math::integrator_interface<N,id,name,diff_fun_wrapper>(diff_fun_wrapper(pObj,diff_fun));
+        case id: return new math::integrator_interface \
+			<N, id, name, decltype(diff_fun_wrapper)> (diff_fun_wrapper);
 
         switch(stepper_id)
         {
