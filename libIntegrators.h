@@ -2,9 +2,23 @@
 #ifndef _Integrators_c_interface_
 #define _Integrators_c_interface_
 
-#include "Integrators/Integrators.h"
-
 #define MAX_STATE_SIZE 55 //It is hard embedded into code
+
+enum STEPPER_TYPE_ID
+{
+	BOOST_EXPLICIT_EULER = 0,
+	BOOST_MODIFIED_MIDPOINT = 1,
+	BOOST_RUNGE_KUTTA4 = 2,
+	BOOST_RUNGE_KUTTA_CASH_KARP54 = 3,
+	BOOST_RUNGE_KUTTA_DOPRI5 = 4,
+	BOOST_RUNGE_KUTTA_FEHLBERG78 = 5,
+	//BOOST_ADAMS_BASHFORTH         = 6,
+	//BOOST_ADAMS_BASHFORTH_MOULTON = 7,
+	//BOOST_ADAMS_MOULTON           = 8,
+	RUNGE_KUTTA4 = 9,
+	RUNGE_KUTTA2 = 10,
+	UNSUPPORTED_TYPE = 0xFF
+};
 
 #ifdef __cplusplus
 extern "C"
@@ -14,7 +28,7 @@ extern "C"
     void* create_integrator_interface
     (
         unsigned long state_size,
-        math::STEPPER_TYPE_ID stepper_id,
+        STEPPER_TYPE_ID stepper_id,
         const void* pObj,
         void (__cdecl *diff_fun)(const void*, const double*, double*, const double*)
     );

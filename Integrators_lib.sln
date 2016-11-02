@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Integrators_lib", "Integrators_lib.vcxproj", "{B68AF6CE-F741-4518-B9DD-81D3299D8637}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libIntegrators", "Integrators_lib.vcxproj", "{B68AF6CE-F741-4518-B9DD-81D3299D8637}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testIntegrators", "..\testIntegrators\testIntegrators.vcxproj", "{33A83B1B-1E23-4294-84DC-22E9B3657033}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{B68AF6CE-F741-4518-B9DD-81D3299D8637}.Release|x64.Build.0 = Release|x64
 		{B68AF6CE-F741-4518-B9DD-81D3299D8637}.Release|x86.ActiveCfg = Release|Win32
 		{B68AF6CE-F741-4518-B9DD-81D3299D8637}.Release|x86.Build.0 = Release|Win32
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Debug|x64.ActiveCfg = Debug|x64
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Debug|x64.Build.0 = Debug|x64
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Debug|x86.ActiveCfg = Debug|Win32
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Debug|x86.Build.0 = Debug|Win32
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Release|x64.ActiveCfg = Release|x64
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Release|x64.Build.0 = Release|x64
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Release|x86.ActiveCfg = Release|Win32
+		{33A83B1B-1E23-4294-84DC-22E9B3657033}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
